@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakery Production Predictor</title>
+</head>
+<body>
+    <h1>Bakery Production Predictor</h1>
+
+    <form action="/predict_all" method="post">
+        <button type="submit">Predict All Items</button>
+    </form>
+
+    {% if predictions %}
+        <h2>Predictions:</h2>
+        <ul>
+        {% for item, count in predictions.items() %}
+            <li>{{ item.capitalize() }}: {{ count }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
