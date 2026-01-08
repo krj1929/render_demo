@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
+from flask_cors import CORS
 import numpy as np
 from datetime import datetime
 
@@ -8,6 +9,7 @@ with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
