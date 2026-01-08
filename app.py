@@ -29,12 +29,11 @@ def predict():
     prediction = model.predict(features)
     prediction_rounded = np.round(prediction).astype(int).tolist()
 
-    return render_template(
-    'home.html',
-    prediction=prediction_rounded,
-    day_num=day_num,
-    weekend=weekend
-    )
+    return jsonify({
+    "prediction":prediction_rounded[0],
+    "day_num":day_num,
+    "weekend":weekend
+    })
 
 
 if __name__ == "__main__":
