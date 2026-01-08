@@ -4,7 +4,7 @@ from flask_cors import CORS
 import numpy as np
 from datetime import datetime
 
-model_path = 'XGBmodel.pkl'
+model_path = 'mlmodel.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
